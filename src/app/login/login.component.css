@@ -1,0 +1,6 @@
+.jumbotron{
+    background-image: url('/assets/images/T1');
+    background-size: cover;
+    background-position: center center;
+    height: 70vh;
+}

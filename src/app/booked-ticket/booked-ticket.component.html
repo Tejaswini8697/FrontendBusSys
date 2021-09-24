@@ -1,0 +1,57 @@
+<div class="row">
+    <span class="label label-danger">{{message}}</span>
+</div>
+
+<div class="row">
+
+    <div class="panel panel-default col-md-11">
+        <div class="table-responsive">
+            <table class="table table-hover table-dark">
+                <thead style="color: black;" class="table-light">
+                    <tr>
+                        <th scope="col">Booked Date</th>
+                        <th scope="col">Owner Name</th>
+                        <th scope="col">Owner Phone</th>
+                        <th scope="col">Fare</th>
+                        <th scope="col">No. Of Passengers</th>
+                        <th scope="col">Source</th>
+                        <th scope="col">Arrival Time</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Departure Time</th>
+                        <th scope="col">Payment Mode</th>
+                        <th scope="col">Cancel Ticket</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of tickets">
+                        <td>{{item.bookedDate}}</td>
+                        <td>{{item.ownerName}}</td>
+                        <td>{{item.ownerPhoneNo}}</td>
+                        <td>{{item.fare}}</td>
+                        <td>{{item.noOfSeats}}</td>
+                        <td>
+                            {{item.busId.routeId.sourceState}}
+                        </td>
+                        <td>
+                            {{item.busId.arrivalDate}}
+                        </td>
+                        <td>
+                            {{item.busId.routeId.DestinationState}}
+                        </td>
+                        <td>
+                            {{item.busId.destinationDate}}
+                        </td>
+                        <td>{{item.paymentMode}}</td>
+                        <td>
+                            <input type="button" (click)="cancelTicket(item.id)" value="CANCEL">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-1">
+
+    </div>
+</div>
